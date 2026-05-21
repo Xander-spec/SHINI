@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHINIGAMES | Legend of the Ancients</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-page legend-ancients">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SHINIGAMES</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link">Игры</a></li>
+                <li class="nav-item"><a href="careers.html" class="nav-link">Карьера</a></li>
+                <li class="nav-item"><a href="support.html" class="nav-link">Поддержка</a></li>
+            </ul>
+
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-outline btn-small">Войти</a>
+                <a href="register.html" class="btn btn-primary btn-small">Регистрация</a>
+            </div>
+
+            <div class="nav-auth auth-user" style="display: none;">
+                <a href="profile.html" class="nav-link user-welcome">Добро пожаловать, <span id="user-name">Пользователь</span>!</a>
+                <button class="btn btn-outline btn-small" id="logout-btn">Выйти</button>
+            </div>
+
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="game-hero">
+        <div class="game-hero-content">
+            <h1>LEGEND OF THE ANCIENTS</h1>
+            <p>Исследуйте забытые земли, сразитесь с древними силами и станьте легендой.</p>
+            <button id="download-btn" class="btn btn-primary">Скачать бесплатно</button>
+            <div id="download-message" style="margin-top: 1rem;"></div>
+        </div>
+    </section>
+
+    <section class="game-about">
+        <div class="container">
+            <h2>ОБ ИГРЕ</h2>
+            <p>Legend of the Ancients — это масштабная MMORPG с открытым миром, эпическим сюжетом и безграничными возможностями для исследования. Создайте своего героя и отправляйтесь в путешествие по миру, полному тайн и опасностей.</p>
+
+            <div class="features-grid">
+                <div class="feature"><h3>Огромный открытый мир</h3><p>Исследуйте континенты, подземелья и древние руины.</p></div>
+                <div class="feature"><h3>Глубокая прокачка</h3><p>10 уникальных классов, сотни способностей.</p></div>
+                <div class="feature"><h3>Эпический сюжет</h3><p>Станьте частью великой саги о борьбе с древним злом.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-screenshots">
+        <div class="container">
+            <h2>СКРИНШОТЫ</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-placeholder"><img src="images/legend.jpg" alt="Скриншот 1"></div>
+                <div class="screenshot-placeholder"><img src="images/legend2.jpg" alt="Скриншот 2"></div>
+                <div class="screenshot-placeholder"><img src="images/legend3.jpg" alt="Скриншот 3"></div>
+                <div class="screenshot-placeholder"><img src="images/legend4.jpg" alt="Скриншот 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="game-download">
+        <div class="container">
+            <h2>ГОТОВЫ СТАТЬ ЛЕГЕНДОЙ?</h2>
+            <p>Присоединяйтесь к миллионам игроков в Legend of the Ancients.</p>
+            <button class="btn btn-large btn-primary download-trigger">Скачать для Windows</button>
+
+            <div class="system-requirements">
+                <h3>Системные требования</h3>
+                <div class="requirements-grid">
+                    <div class="requirement">
+                        <h4>МИНИМАЛЬНЫЕ:</h4>
+                        <p>ОС: Windows 10 (64-битная)<br>Процессор: Intel Core i5-4460<br>Память: 8 GB ОЗУ<br>Видеокарта: GeForce GTX 750 Ti</p>
+                    </div>
+                    <div class="requirement">
+                        <h4>РЕКОМЕНДУЕМЫЕ:</h4>
+                        <p>ОС: Windows 10/11 (64-битная)<br>Процессор: Intel Core i7-7700<br>Память: 16 GB ОЗУ<br>Видеокарта: GeForce GTX 1060</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">SHINIGAMES</a>
+                    <p class="footer-description">Создаём миры, которые вдохновляют</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="games.html">Игры</a></li>
+                        <li><a href="careers.html">Карьера</a></li>
+                        <li><a href="support.html">Поддержка</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@shinigames.com">support@shinigames.com</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">VK</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                        <li><a href="#">Кодекс поведения</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SHINIGAMES. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        async function handleDownload() {
+            const msg = document.getElementById('download-message');
+            try {
+                const res = await fetch('php/check_session.php');
+                const data = await res.json();
+                if (data.isAuthenticated) {
+                    msg.innerHTML = '<span style="color:#4CAF50;">✅ Скачивание началось...</span>';
+                    const link = document.createElement('a');
+                    link.href = 'downloads/legend-ancients-setup.exe';
+                    link.download = 'Legend_Of_The_Ancients.exe';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    setTimeout(() => msg.innerHTML = '', 3000);
+                } else {
+                    msg.innerHTML = '<span style="color:#ff4444;">⚠️ Только для авторизованных! Перенаправление...</span>';
+                    setTimeout(() => window.location.href = 'login.html', 2000);
+                }
+            } catch(e) { msg.innerHTML = '<span style="color:#ff4444;">❌ Ошибка</span>'; }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('php/check_session.php');
+                const data = await res.json();
+                if (data.isAuthenticated) {
+                    document.querySelector('.nav-auth:not(.auth-user)').style.display = 'none';
+                    document.querySelector('.nav-auth.auth-user').style.display = 'flex';
+                    document.getElementById('user-name').textContent = data.user.username;
+                }
+            } catch(e) {}
+            document.getElementById('download-btn')?.addEventListener('click', handleDownload);
+            document.querySelectorAll('.download-trigger').forEach(btn => btn.addEventListener('click', handleDownload));
+        });
+    </script>
+</body>
+</html>

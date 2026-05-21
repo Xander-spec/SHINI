@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHINIGAMES | Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SHINIGAMES</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link">Игры</a></li>
+                <li class="nav-item"><a href="careers.html" class="nav-link">Карьера</a></li>
+                <li class="nav-item"><a href="support.html" class="nav-link">Поддержка</a></li>
+            </ul>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-outline btn-small">Войти</a>
+                <a href="register.html" class="btn btn-primary btn-small">Регистрация</a>
+            </div>
+            
+            <div class="nav-auth auth-user" style="display: none;">
+                <a href="profile.html" class="nav-link user-welcome">Добро пожаловать, <span id="user-name">Пользователь</span>!</a>
+                <button class="btn btn-outline btn-small" id="logout-btn">Выйти</button>
+            </div>
+            
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <h1>ЛИЧНЫЙ КАБИНЕТ</h1>
+                <p>Управляйте своей учетной записью</p>
+            </div>
+
+            <div id="profile-content" style="display: none;">
+                <div class="profile-content">
+                    <div class="profile-sidebar">
+                        <div class="user-card">
+                            <div class="user-avatar">
+                                <div class="avatar-placeholder" id="user-avatar">U</div>
+                            </div>
+                            <h3 id="display-username">Загрузка...</h3>
+                            <p class="user-email" id="display-email">Загрузка...</p>
+                            <p class="member-since">Участник с <span id="member-since">2024</span></p>
+                        </div>
+                        
+                        <nav class="profile-nav">
+                            <button class="profile-nav-btn active" data-tab="overview">Обзор</button>
+                            <button class="profile-nav-btn" data-tab="games">Мои игры</button>
+                            <button class="profile-nav-btn" data-tab="settings">Настройки</button>
+                        </nav>
+                    </div>
+
+                    <div class="profile-main">
+                        <div class="tab-content active" id="overview-tab">
+                            <h2>ДОБРО ПОЖАЛОВАТЬ!</h2>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <h3>Игровое время</h3>
+                                    <p class="stat-value" id="profile-playtime">0 ч</p>
+                                    <p class="stat-label">за все время</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Достижения</h3>
+                                    <p class="stat-value">5/50</p>
+                                    <p class="stat-label">разблокировано</p>
+                                </div>
+                                <div class="stat-card">
+                                    <h3>Уровень</h3>
+                                    <p class="stat-value" id="profile-level">1</p>
+                                    <p class="stat-label">в сообществе</p>
+                                </div>
+                            </div>
+                            <div class="recent-activity">
+                                <h3>Последняя активность</h3>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <span class="activity-icon">🎮</span>
+                                        <div class="activity-content">
+                                            <p>Добро пожаловать в SHINIGAMES!</p>
+                                            <span class="activity-time">Только что</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="games-tab">
+                            <h2>МОИ ИГРЫ</h2>
+                            <div class="games-library">
+                                <div class="library-game">
+                                    <div class="game-icon" style="background-color: #2a2a2a;">🎮</div>
+                                    <div class="game-info">
+                                        <h4>Cyber Realm</h4>
+                                        <p>Скачайте игру, чтобы начать</p>
+                                        <button class="btn btn-outline btn-small">Скачать</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="settings-tab">
+                            <h2>НАСТРОЙКИ АККАУНТА</h2>
+                            <div class="settings-info">
+                                <p><strong>Имя пользователя:</strong> <span id="settings-username">Загрузка...</span></p>
+                                <p><strong>Email:</strong> <span id="settings-email">Загрузка...</span></p>
+                                <p><strong>Дата регистрации:</strong> <span id="settings-created">Загрузка...</span></p>
+                            </div>
+                            <button class="btn btn-primary" id="profile-logout-btn">Выйти из аккаунта</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="loading-message" style="text-align: center; padding: 50px;">
+                <p>Загрузка данных профиля...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">SHINIGAMES</a>
+                    <p class="footer-description">Создаём миры, которые вдохновляют</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="games.html">Игры</a></li>
+                        <li><a href="careers.html">Карьера</a></li>
+                        <li><a href="support.html">Поддержка</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@shinigames.com">support@shinigames.com</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">VK</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                        <li><a href="#">Кодекс поведения</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SHINIGAMES. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function loadProfile() {
+            try {
+                const response = await fetch('php/get_user_data.php');
+                const data = await response.json();
+                
+                console.log('Profile data:', data);
+                
+                if (data.success) {
+                    const user = data.user;
+                    
+                    document.getElementById('profile-content').style.display = 'block';
+                    document.getElementById('loading-message').style.display = 'none';
+                    
+                    document.getElementById('user-avatar').textContent = user.avatar || user.username.charAt(0).toUpperCase();
+                    document.getElementById('display-username').textContent = user.username;
+                    document.getElementById('display-email').textContent = user.email;
+                    document.getElementById('member-since').textContent = user.created_at || '2024';
+                    document.getElementById('profile-playtime').textContent = (user.playtime || 0) + ' ч';
+                    document.getElementById('profile-level').textContent = user.level || '1';
+                    document.getElementById('settings-username').textContent = user.username;
+                    document.getElementById('settings-email').textContent = user.email;
+                    document.getElementById('settings-created').textContent = user.created_at || '2024';
+                    
+                    const userNameSpan = document.getElementById('user-name');
+                    if (userNameSpan) userNameSpan.textContent = user.username;
+                    
+                    const guestNav = document.querySelector('.nav-auth:not(.auth-user)');
+                    const userNav = document.querySelector('.nav-auth.auth-user');
+                    if (guestNav) guestNav.style.display = 'none';
+                    if (userNav) userNav.style.display = 'flex';
+                } else {
+                    window.location.href = 'login.html';
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки профиля:', error);
+                window.location.href = 'login.html';
+            }
+        }
+        
+        function initTabs() {
+            const tabButtons = document.querySelectorAll('.profile-nav-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab') + '-tab';
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    button.classList.add('active');
+                    const targetTab = document.getElementById(tabId);
+                    if (targetTab) targetTab.classList.add('active');
+                });
+            });
+        }
+        
+        function setupLogout() {
+            const logoutBtn = document.getElementById('profile-logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    window.location.href = 'php/logout.php';
+                });
+            }
+            
+            const logoutBtn2 = document.getElementById('logout-btn');
+            if (logoutBtn2) {
+                logoutBtn2.addEventListener('click', () => {
+                    window.location.href = 'php/logout.php';
+                });
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProfile();
+            initTabs();
+            setupLogout();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1322 @@
+/* CSS Reset и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black: #0a0a0a;
+    --color-dark-gray: #1a1a1a;
+    --color-gray: #2a2a2a;
+    --color-light-gray: #3a3a3a;
+    --color-lighter-gray: #4a4a4a;
+    --color-white: #ffffff;
+    --color-off-white: #e0e0e0;
+    --font-main: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-black);
+    color: var(--color-off-white);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-white);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    color: var(--color-off-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-white);
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-welcome {
+    color: var(--color-white) !important;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.nav-auth .btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-white);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    color: var(--color-white);
+    text-decoration: none;
+    border: 1px solid var(--color-white);
+    border-radius: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-white);
+}
+
+.btn-outline {
+    border-color: var(--color-lighter-gray);
+    color: var(--color-off-white);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Герой-секции с фоновыми изображениями */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    text-align: center;
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background-size: cover;
+}
+
+.games-hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    text-align: center;
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('') no-repeat center center/cover;
+    background-size: cover;
+}
+
+.careers-hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('../images/careers-hero-bg.jpg') no-repeat center center/cover;
+    background-size: cover;
+    color: var(--color-white);
+}
+
+.support-hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('../images/support-hero-bg.jpg') no-repeat center center/cover;
+    background-size: cover;
+    color: var(--color-white);
+}
+
+/* Страница игры — параллакс фон (общий класс) */
+.game-page {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Фоны для разных игр (укажешь свои пути) */
+.game-page.cyber-realm {
+    background-image: url('images/cyber.jpg');
+}
+
+.game-page.legend-ancients {
+    background-image: url('images/legend.jpg');
+}
+
+.game-page.stellar-command {
+    background-image: url('images/stellar.jpg');
+}
+
+/* Затемнение для секций на странице игры */
+.game-page .game-hero,
+.game-page .game-about,
+.game-page .game-screenshots,
+.game-page .game-download {
+    background-color: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(2px);
+    margin: 0;
+}
+
+/* Убираем индивидуальные фоны у секций */
+.game-page .game-hero {
+    background: none;
+}
+
+.game-page .game-about {
+    background: none;
+}
+
+.game-page .game-screenshots {
+    background: none;
+}
+
+.game-page .game-download {
+    background: none;
+}
+
+/* Дополнительное затемнение снизу, чтобы не было резкой границы */
+.game-page .game-download {
+    padding-bottom: 5rem;
+}
+
+.game-page .game-download::after {
+    display: none;
+}
+
+/* Контентные секции */
+.hero-content,
+.games-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--color-white);
+    padding: 0 20px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-content h1,
+.games-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p,
+.games-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Сетки */
+.news-grid,
+.game-grid,
+.features-grid,
+.screenshots-grid,
+.requirements-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.screenshots-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.requirements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Карточки */
+.news-card,
+.game-card {
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.game-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.news-card:hover,
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-card:hover {
+    border-color: var(--color-white);
+}
+
+.news-image-placeholder {
+    height: 200px;
+    background-color: var(--color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.news-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.screenshot-placeholder {
+    height: 150px;
+    background-color: var(--color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.screenshot-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.05);
+}
+
+.game-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-info h3 {
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.game-info p {
+    color: var(--color-lighter-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.game-info .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0 1rem 1rem;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Секции */
+.news-preview,
+.game-about,
+.game-screenshots,
+.game-download {
+    padding: 5rem 0;
+}
+
+.game-about,
+.game-screenshots,
+.game-download {
+    text-align: center;
+}
+
+.game-about h2,
+.game-screenshots h2,
+.game-download h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Страница игры — герой */
+.game-hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('images/cyber.jpg') no-repeat center center/cover;
+    background-size: cover;
+}
+
+.game-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.game-about p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+.feature {
+    padding: 1.5rem;
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+}
+
+.feature h3 {
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.system-requirements {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.requirement {
+    padding: 1.5rem;
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+}
+
+.requirement h4 {
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+/* Футер */
+.footer {
+    background-color: var(--color-dark-gray);
+    border-top: 1px solid var(--color-light-gray);
+    margin-top: 0;
+    padding: 3rem 0 1.5rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-white);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.footer-description {
+    color: var(--color-lighter-gray);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.footer-section h4 {
+    color: var(--color-white);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section .footer-links a {
+    color: var(--color-lighter-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-section .footer-links a:hover {
+    color: var(--color-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.footer-bottom p {
+    color: var(--color-lighter-gray);
+    font-size: 0.8rem;
+}
+
+/* Страница карьеры и поддержки */
+.about-culture {
+    padding: 5rem 0;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.culture-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+}
+
+.culture-content > p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--color-off-white);
+}
+
+.culture-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.culture-feature {
+    padding: 1.5rem;
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+}
+
+.culture-feature h3 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.culture-feature p {
+    margin: 0;
+    color: var(--color-lighter-gray);
+}
+
+.culture-image {
+    background: url('../images/office-photo.jpg') no-repeat center center/cover;
+    background-size: cover;
+    border-radius: 8px;
+    border: 1px solid var(--color-light-gray);
+    min-height: 300px;
+}
+
+.benefits-section {
+    padding: 5rem 0;
+    background-color: var(--color-dark-gray);
+    text-align: center;
+}
+
+.benefits-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-white);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    padding: 2rem;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: var(--color-lighter-gray);
+    margin: 0;
+}
+
+.vacancies-section {
+    padding: 5rem 0;
+}
+
+.vacancies-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-white);
+}
+
+.vacancies-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-light-gray);
+    color: var(--color-off-white);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+
+.vacancies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.vacancy-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.vacancy-card:hover {
+    border-color: var(--color-white);
+    transform: translateX(10px);
+}
+
+.vacancy-info {
+    flex: 1;
+}
+
+.vacancy-info h3 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.vacancy-department {
+    color: var(--color-lighter-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.vacancy-description {
+    color: var(--color-off-white);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.vacancy-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.3rem 0.8rem;
+    background-color: var(--color-gray);
+    color: var(--color-off-white);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid var(--color-light-gray);
+}
+
+.vacancy-actions {
+    margin-left: 2rem;
+}
+
+.application-section {
+    padding: 5rem 0;
+    background-color: var(--color-dark-gray);
+}
+
+.application-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--color-dark-gray), var(--color-gray));
+    border: 1px solid var(--color-light-gray);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.application-card h2 {
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.application-card p {
+    color: var(--color-lighter-gray);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.application-form {
+    text-align: left;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.application-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    color: var(--color-white);
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.application-form input[type="file"] {
+    padding: 0.5rem;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    color: var(--color-white);
+}
+
+/* Поддержка */
+.support-search {
+    padding: 3rem 0;
+    background-color: var(--color-dark-gray);
+}
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    color: var(--color-white);
+    font-size: 1rem;
+}
+
+.support-categories {
+    padding: 5rem 0;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.category-card {
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.category-card h3 {
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.category-card p {
+    color: var(--color-lighter-gray);
+    margin-bottom: 1.5rem;
+}
+
+.faq-section {
+    padding: 5rem 0;
+    background-color: var(--color-dark-gray);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.faq-item {
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    background-color: var(--color-gray);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--color-light-gray);
+}
+
+.faq-question h3 {
+    margin: 0;
+    color: var(--color-white);
+    font-size: 1.1rem;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-white);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: var(--color-dark-gray);
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--color-off-white);
+    line-height: 1.6;
+}
+
+.contact-support {
+    padding: 5rem 0;
+}
+
+.contact-card {
+    background: linear-gradient(135deg, var(--color-dark-gray), var(--color-gray));
+    border: 1px solid var(--color-light-gray);
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+}
+
+.contact-card h2 {
+    margin-bottom: 1rem;
+    color: var(--color-white);
+}
+
+.contact-card p {
+    color: var(--color-lighter-gray);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contact-method {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--color-light-gray);
+}
+
+.method-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-method h4 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.contact-method p {
+    margin-bottom: 0.5rem;
+    color: var(--color-lighter-gray);
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--color-black);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .games-hero,
+    .careers-hero,
+    .support-hero {
+        height: 50vh;
+        min-height: 400px;
+    }
+
+    .hero-content h1,
+    .game-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .game-image {
+        height: 200px;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .vacancy-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .vacancy-actions {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .vacancy-actions .btn {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-section .footer-links {
+        align-items: center;
+    }
+}
+.game-page {
+    background-image: url('images/cyber.jpg');
+}
+/* Параллакс-фон для главной страницы и страниц игр */
+.game-page {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Фон для главной страницы */
+.game-page {
+    background-image: url('images/cyber.jpg');
+}
+
+/* Затемнение для всех секций на главной */
+.game-page .hero,
+.game-page .news-preview,
+.game-page .games-list {
+    background-color: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.game-page .hero {
+    background: none;
+}
+
+.game-page .news-preview {
+    background: none;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--color-white);
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: var(--color-lighter-gray);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-body h2 {
+    color: var(--color-white);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-right: 30px;
+}
+
+.modal-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-body p {
+    color: var(--color-off-white);
+    line-height: 1.6;
+}
+
+/* Карточка новости — фиксированная высота и кнопка внизу */
+.news-card {
+    background-color: var(--color-dark-gray);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-white);
+}
+
+/* Изображение */
+.news-image-placeholder {
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.news-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image-placeholder img {
+    transform: scale(1.05);
+}
+
+/* Заголовок */
+.news-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 1rem 0.5rem 1rem;
+    color: var(--color-white);
+    line-height: 1.4;
+    min-height: 50px;
+}
+
+/* Текст — растягивается, чтобы кнопка была внизу */
+.news-card p {
+    font-size: 0.95rem;
+    color: var(--color-lighter-gray);
+    margin: 0 1rem 1rem 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Кнопка — всегда внизу */
+.news-card .read-more {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: transparent;
+    color: var(--color-white);
+    text-decoration: none;
+    border: 1px solid var(--color-lighter-gray);
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin: 0 1rem 1.5rem 1rem;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.news-card .read-more:hover {
+    border-color: var(--color-white);
+    color: var(--color-white);
+    background-color: transparent;
+}
+/* Отступ между карточками игр и подвалом */
+.games-list {
+    padding-bottom: 5rem;
+    margin-bottom: 2rem;
+}
+
+/* Дополнительный отступ перед подвалом */
+.footer {
+    margin-top: 2rem;
+}

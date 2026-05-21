@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHINIGAMES | Домашняя страница</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">SHINIGAMES</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Главная</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link">Игры</a></li>
+                <li class="nav-item"><a href="careers.html" class="nav-link">Карьера</a></li>
+                <li class="nav-item"><a href="support.html" class="nav-link">Поддержка</a></li>
+            </ul>
+
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-outline btn-small">Войти</a>
+                <a href="register.html" class="btn btn-primary btn-small">Регистрация</a>
+            </div>
+
+            <div class="nav-auth auth-user" style="display: none;">
+                <a href="profile.html" class="nav-link user-welcome">Добро пожаловать, <span id="user-name">Пользователь</span>!</a>
+                <button class="btn btn-outline btn-small" id="logout-btn">Выйти</button>
+            </div>
+
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>СОЗДАЕМ МИРЫ, КОТОРЫЕ ВДОХНОВЛЯЮТ</h1>
+            <p>Мы — SHINIGAMES. Наша страсть — создание незабываемых игровых вселенных.</p>
+            <a href="games.html" class="btn btn-primary">Смотреть игры</a>
+        </div>
+    </section>
+
+    <section class="news-preview">
+        <div class="container">
+            <h2>Последние новости</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image-placeholder">
+                        <img src="images/i%20(8).webp" alt="Новое обновление игры">
+                    </div>
+                    <h3>Обновление 2.0 выходит на следующей неделе</h3>
+                    <p>Огромное обновление с новым контентом и исправлениями.</p>
+                    <a href="javascript:void(0)" class="read-more" onclick="openNews('news1')">Читать далее</a>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image-placeholder">
+                        <img src="images/_9ttIBG39hFZR4ngYXv5dS.jpg" alt="Киберспортивный турнир">
+                    </div>
+                    <h3>Киберспортивный Championship 2024</h3>
+                    <p>Регистрация на главный турнир года открыта.</p>
+                    <a href="javascript:void(0)" class="read-more" onclick="openNews('news2')">Читать далее</a>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image-placeholder">
+                        <img src="images/e105661446d8893219a445ca6468beb9.jpg" alt="За кулисами игры">
+                    </div>
+                    <h3>За кулисами: искусство и звук</h3>
+                    <p>Узнайте, как создавалось аудиовизуальное оформление нашей последней игры.</p>
+                    <a href="javascript:void(0)" class="read-more" onclick="openNews('news3')">Читать далее</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">SHINIGAMES</a>
+                    <p class="footer-description">Создаём миры, которые вдохновляют</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="games.html">Игры</a></li>
+                        <li><a href="careers.html">Карьера</a></li>
+                        <li><a href="support.html">Поддержка</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@shinigames.com">support@shinigames.com</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">VK</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                        <li><a href="#">Кодекс поведения</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SHINIGAMES. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle">Заголовок</h2>
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Новость">
+                </div>
+                <p id="modalText">Текст новости...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const newsData = {
+            news1: {
+                title: "Обновление 2.0 выходит на следующей неделе",
+                text: "Мы рады представить долгожданное обновление 2.0 для наших игр. В новой версии вас ждут новые игровые режимы, улучшенная графика и производительность, балансные изменения персонажей, исправление багов, а также новые достижения и награды.",
+                image: "images/i%20(8).webp"
+            },
+            news2: {
+                title: "Киберспортивный Championship 2024",
+                text: "Регистрация на главный киберспортивный турнир года уже открыта! Призовой фонд составляет 5 000 000 рублей.",
+                image: "images/_9ttIBG39hFZR4ngYXv5dS.jpg"
+            },
+            news3: {
+                title: "За кулисами: искусство и звук",
+                text: "Узнайте, как создавалось аудиовизуальное оформление нашей последней игры. Эксклюзивное интервью с художниками и звукорежиссёрами.",
+                image: "images/e105661446d8893219a445ca6468beb9.jpg"
+            }
+        };
+
+        const modal = document.getElementById('newsModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalText = document.getElementById('modalText');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close-modal');
+
+        window.openNews = function(newsId) {
+            const news = newsData[newsId];
+            if (news) {
+                modalTitle.textContent = news.title;
+                modalText.textContent = news.text;
+                modalImage.src = news.image;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModalWindow() {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        closeModal.addEventListener('click', closeModalWindow);
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeModalWindow();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') closeModalWindow();
+        });
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('php/check_session.php');
+                const data = await res.json();
+                if (data.isAuthenticated) {
+                    document.querySelector('.nav-auth:not(.auth-user)').style.display = 'none';
+                    document.querySelector('.nav-auth.auth-user').style.display = 'flex';
+                    document.getElementById('user-name').textContent = data.user.username;
+                }
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>
